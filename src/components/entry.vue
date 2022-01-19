@@ -8,7 +8,7 @@
 	    <input v-model="email" id="email" class="input-reset ba b--black-50 pa2 mb2 db w-100" type="text" aria-describedby="name-desc">
 	    <small id="name-desc" class="f6 black-60 db mb2"></small>
 
-	    <label for="name" class="f3  db mb2 mt4 tracked">eth or polygon address</label>
+	    <label for="name" class="f3  db mb2 mt4 tracked">eth, ens, or polygon address</label>
 	    <input v-model="address" id="address" class="input-reset ba b--black-50 pa2 mb2 db w-100" type="text" aria-describedby="name-desc">
 	    <small id="name-desc" class="f6 black-60 db mb2"></small>
 
