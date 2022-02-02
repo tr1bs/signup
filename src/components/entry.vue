@@ -25,10 +25,8 @@
 
 <script>
 import firebase from "firebase"
-import { v4 as uuid} from "uuid"
+import { v4 as uuidv4 } from "uuid"
 import { db } from '../db'
-
-
 
 
 //todo: check for email already, validate feed errors
