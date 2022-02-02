@@ -25,6 +25,7 @@
 
 <script>
 import firebase from "firebase"
+import { v4 as uuid} from "uuid"
 import { db } from '../db'
 
 
@@ -53,16 +54,15 @@ export default {
   		const createdAt = new Date()
   		if (this.emailIsValid(this.email) && this.address) {
   			var query = await db.collection('splash2').where("email", "==", this.email).get()
-  			var berry = await db.collection('splash2').where("address", "==", this.address).get()  			
+  			var berry = await db.collection('splash2').where("address", "==", this.address).get()
+  			const uuid = uuidv4()
   			if (query.docs.length || berry.docs.length) {
   				this.error = 'you already signed up'
   			} else {
-  				db.collection('splash2').add({'email': this.email, 'date': createdAt, 'address': this.address})
+  				db.collection('splash2').add({ 'email': this.email, 'date': createdAt, 'address': this.address, 'uuid': uuid })
   				this.$router.push({ path: 'thanks' })
   			}
-  			// probably try catch this
-  			
-  				
+  			  				
   		}
   		
   	},
