@@ -13,7 +13,7 @@
 	    <small id="name-desc" class="f6 black-60 db mb2"></small>
 
 	    <div class="center tc">
-	    	<a class="f6 b grow-large link dim br1 ba bw1 ph3 pv2 mb2 dib near-black mt4" @click="submit">submīt</a>
+	    	<a class="f6 b grow-large link dim br1 ba bw1 ph3 pv2 mb2 dib near-black mt4 pointer" @click="submit">submīt</a>
 
 	    	<h3 class="mt4 red" v-if="error">{{ error }}</h3>
 	    </div>
@@ -26,7 +26,8 @@
 <script>
 import firebase from "firebase"
 import { v4 as uuidv4 } from "uuid"
-import { db } from '../db'
+import { sgMail, db } from '../db'
+import axios from 'axios'
 
 
 //todo: check for email already, validate feed errors
@@ -39,7 +40,8 @@ export default {
     	'email': '',
     	'isValid': false,
     	'address': '',
-    	'error': null
+    	'error': null,
+    	'uuid': null
     }
   },
 
@@ -54,15 +56,33 @@ export default {
   			var query = await db.collection('splash2').where("email", "==", this.email).get()
   			var berry = await db.collection('splash2').where("address", "==", this.address).get()
   			const uuid = uuidv4()
+  			this.uuid = uuid
   			if (query.docs.length || berry.docs.length) {
   				this.error = 'you already signed up'
   			} else {
-  				db.collection('splash2').add({ 'email': this.email, 'date': createdAt, 'address': this.address, 'uuid': uuid })
+  				db.collection('splash2').add({ 'email': this.email, 'date': createdAt, 'address': this.address, 'uuid': uuid, activated: false })
+  				.then(() => {
+  					this.sendEmail()
+  				})
+
   				this.$router.push({ path: 'thanks' })
   			}
   			  				
   		}
   		
+  	},
+
+  	async sendEmail() {
+  		const pkg = {
+  			"email": this.email,
+  			"address": this.address,
+  			"uuid": this.uuid,
+  			"shh": process.env.VUE_APP_SHH
+  		}
+  		console.log(pkg)
+  		const req = await axios.post('https://api.tri.bs/api/hello', pkg)
+  		console.log(req)
+  		// make prod/local env vars for that post url
   	},
 
   	emailIsValid (email) {
