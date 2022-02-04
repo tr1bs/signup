@@ -77,7 +77,7 @@ export default {
   			"email": this.email,
   			"address": this.address,
   			"uuid": this.uuid,
-  			"shh": process.env.VUE_APP_SHH
+  			"shh": process.env.SHH
   		}
   		console.log(pkg)
   		const req = await axios.post('https://api.tri.bs/api/hello', pkg)

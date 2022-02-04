@@ -14,6 +14,6 @@ const db = firebase
 const { TimeStamp, GeoPoint } = firebase.firestore
 export { TimeStamp, GeoPoint }
 
-sgMail.setApiKey(process.env.VUE_APP_SENDGRID_API_KEY)
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 export { sgMail, db }
