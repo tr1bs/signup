@@ -46,7 +46,7 @@ export default {
   },
 
   mounted() {
-  	console.log(process.env.VUE_APP_SHH)
+
   },
 
   methods:{
@@ -77,9 +77,8 @@ export default {
   			"email": this.email,
   			"address": this.address,
   			"uuid": this.uuid,
-  			"shh": process.env.SHH
+  			"shh": process.env.VUE_APP_SHH
   		}
-  		console.log(pkg)
   		const req = await axios.post('https://api.tri.bs/api/hello', pkg)
   		console.log(req)
   		// make prod/local env vars for that post url
