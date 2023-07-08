@@ -1,6 +1,6 @@
 <template>
 <div id="output" class="">
-	<div data-letter-crap='logo.png' data-lettercrap-aspect-ratio='0.5' data-lettercrap-words='collective faith'></div>
+	<div data-letter-crap='logo.png' style='width: 100%' data-lettercrap-aspect-ratio='0.5' data-lettercrap-words='collective faith'></div>
 
 	<form class="ph4 black-80 helvetica">
 	  <div class="measure center">
