@@ -1,10 +1,10 @@
 <template>
 <div id="output" class="">
 
-	<div class="center tc" data-letter-crap='logo.png' style='width: 100%' data-lettercrap-aspect-ratio='1' data-lettercrap-words='collective faith'></div>
+	<div class="ml4" data-letter-crap='logo.png' style='width: 100%' data-lettercrap-aspect-ratio='1' data-lettercrap-words='collective faith'></div>
 
 	<form class="ph4 black-80 helvetica">
-	  <div class="measure center">
+	  <div class="">
 	    <label for="email" class="f3 db mb2 tracked">emaīl</label>
 	    <input v-model="email" id="email" class="input-reset ba b--black-50 pa2 mb2 db w-100" type="text" aria-describedby="name-desc">
 	    <small id="name-desc" class="f6 black-60 db mb2"></small>
