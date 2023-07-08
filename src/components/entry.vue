@@ -1,7 +1,7 @@
 <template>
 <div id="output" class="">
 
-	<div class="ml3" data-letter-crap='logo.png' style='width: 100%' data-lettercrap-aspect-ratio='1' data-lettercrap-words='collective faith'></div>
+	<div class="" data-letter-crap='logo.png' style='width: 100%' data-lettercrap-aspect-ratio='1' data-lettercrap-words='collective faith'></div>
 
 	<form class="ph4 black-80 helvetica">
 	  <div class="">
