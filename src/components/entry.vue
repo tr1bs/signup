@@ -1,6 +1,6 @@
 <template>
 <div id="output" class="">
-	<div data-lettercrap-text='t r ī b s' style='width: 1500px; height: 1500px' data-lettercrap-aspect-ratio='0.5' data-lettercrap-words='collective faith'></div>
+	<div data-lettercrap-aspect-ratio='0.5' data-lettercrap-words='collective faith'></div>
 
 	<form class="ph4 black-80 helvetica">
 	  <div class="measure center">
@@ -11,7 +11,6 @@
 
 	    <div class="center tc">
 	    	<a class="f6 b grow-large link dim br1 ba bw1 ph3 pv2 mb2 dib near-black mt4 pointer" @click="submit">submīt</a>
-
 	    	<h3 class="mt4 red" v-if="error">{{ error }}</h3>
 	    </div>
 	  </div>
