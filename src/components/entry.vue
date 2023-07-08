@@ -1,7 +1,7 @@
 <template>
 <div id="output" class="">
 
-	<div class="ml4" data-letter-crap='logo.png' style='width: 100%' data-lettercrap-aspect-ratio='1' data-lettercrap-words='collective faith'></div>
+	<div class="ml3" data-letter-crap='logo.png' style='width: 100%' data-lettercrap-aspect-ratio='1' data-lettercrap-words='collective faith'></div>
 
 	<form class="ph4 black-80 helvetica">
 	  <div class="">
@@ -66,8 +66,7 @@ export default {
 	font-size: 10px;
 	line-height: 11px;
 	font-family: monospace;
-	padding: 0;
-	margin-left: -2.30em;
+	padding: 0;	
 	font-weight: bolder;
 }
 </style>
