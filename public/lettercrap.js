@@ -82,7 +82,7 @@
     }
 
     let words = element.hasAttribute('data-lettercrap-words') ? element.getAttribute('data-lettercrap-words').split(' ') : [];
-    let letters = element.hasAttribute('data-lettercrap-letters') ? element.getAttribute('data-lettercrap-letters') : '0❤$10ī010$_❤';
+    let letters = element.hasAttribute('data-lettercrap-letters') ? element.getAttribute('data-lettercrap-letters') : '✞0❤✝10ī010$_❤✝';
     let textCondition = prev && prev.width === element.clientWidth && prev.height === element.clientHeight;
     let text = getTextContentWithImageAtSize(image, element.clientWidth, element.clientHeight, 
       textCondition ? prev.text : null, words, letters);
