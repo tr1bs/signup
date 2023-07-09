@@ -45,7 +45,22 @@ export default {
   methods:{
   	async submit() {
 		console.log('here')
-		
+		const url = "https://api.collective.faith/email";
+		const options = {
+		method: "POST",
+		headers: {
+			Accept: "application/json",
+			"Content-Type": "application/json;charset=UTF-8",
+		},
+		body: JSON.stringify({
+			email: this.email,
+		}),
+		};
+		fetch(url, options)
+		.then((response) => response.json())
+		.then((data) => {
+			console.log(data);
+		});	
   	},
 
   	async sendEmail() {
