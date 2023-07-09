@@ -60,7 +60,13 @@ export default {
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data);
-		});	
+			alert('ut desint vires, tamen est laudanda voluntas')
+
+		})
+		.catch(error => {
+			console.error('timeout exceeded')
+			alert('invalid request. try again')
+		})	
   	},
 
   	async sendEmail() {
